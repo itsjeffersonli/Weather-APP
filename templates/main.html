@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Weather</title>
+        <link rel="icon" type="image/jpg" href="https://freepngimg.com/download/weather/23529-2-weather-hd.png"/>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript"></script>
+       <style>
+            .card1 {
+                background-image: url({{ night_day }});
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 30px 20px 30px 50px;
+            }
+       </style>
+    </head>
+    <body oncontextmenu="return false" class="snippet-body">
+        <div class="container-fluid px-1 px-sm-3 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="row card0">
+                    <div class="card1 col-lg-8 col-md-7">
+                        <small>Weather App</small>
+                        <div class="text-center" style="padding-top: 200px"></div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="card2 col-lg-4 col-md-5">
+                        <form method="post" action="/find">
+                            <div class="row px-3">
+                                <input type="text" name="location" placeholder="Find location" class="mb-5" />
+                                <button type="submit" class="fa fa-search mb-5 mr-0 text-center" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
