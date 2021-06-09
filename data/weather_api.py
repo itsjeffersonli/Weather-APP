@@ -10,4 +10,3 @@ def get_weather(city):
     _data = response.json()
     with open('weather.txt', 'w+') as weather:
         json.dump(_data, weather, indent=4, sort_keys=True)
-
