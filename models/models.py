@@ -1,5 +1,18 @@
 import json
-from data.date import date_converter
+from datetime import datetime
+from pytz import timezone
+
+
+def date_converter(_timezone):
+    _timezone = str(_timezone)
+    format = "%H:%M - %m/%d/%Y"
+    now = datetime.now(timezone('UTC'))
+    _get_utc_time = now.strftime(format)
+
+    now_timezone = now.astimezone(timezone(_timezone))
+    final_date = now_timezone.strftime(format)
+
+    return final_date
 
 
 def get_icon():
@@ -65,7 +78,7 @@ def get_city():
         _city = _data['location']['name']
         _country = _data['location']['country']
 
-        _data_combine = "{0},{1}".format(_city, _country)
+        _data_combine = "{0}, {1}".format(_city, _country)
 
         return _data_combine
 
@@ -78,4 +91,3 @@ def get_date():
         date_convert = date_converter(_date)
 
         return date_convert
-

@@ -1,8 +1,7 @@
 import json
 import time
 
-# https://www.videvo.net/
-
+# Normal Weather
 clear = "/static/media/sunny.gif"
 sunny = "/static/media/sunny.gif"
 cloudy = "/static/media/cloudy.gif"
@@ -40,13 +39,11 @@ light_snow_with_thunder = "/static/media/light_snow.gif"
 heavy_snow_with_thunder = "/static/media/blizzard.gif"
 
 # Sleet
-# https://gifer.com/
 patchy_sleet = "/static/media/light_sleet.gif"
 light_sleet = "/static/media/light_sleet.gif"
 moderate_sleet = "/static/media/moderate_sleet.gif"
 
 # Hail
-# https://makeagif.com/i/BUhmG3
 hail = "/static/media/hail.gif"
 heavy_hail = "/static/media/hail.gif"
 
@@ -137,22 +134,6 @@ def check_icons():
         else:
             return "https://i.imgur.com/M8VyA2h.png"
 
-
-def check_day_night():
-    sunrise = ""
-    day = "/static/media/no_search/day.gif"
-    night = "/static/media/no_search/night.gif"
-
-    mytime = time.localtime()
-
-    if 4 < mytime.tm_hour < 6:
-        return sunrise
-    elif 6 < mytime.tm_hour < 18:
-        return day
-    else:
-        return night
-
-
 def white_black():
     white_color = "white"
     black_color = "black"
@@ -160,7 +141,7 @@ def white_black():
         _data = json.loads(checkicons.read())
         _data_icons = _data['current']['condition']['text']
 
-        if _data_icons in ['Freezing Fog', 'Sunny', 'Blizzard']:
+        if _data_icons in ['Freezing Fog', 'Blizzard']:
             return black_color
         else:
             return white_color
@@ -196,3 +177,4 @@ def comment():
         else:
             videvo_final = videvo.replace('"', '', 2)
             return videvo_final
+
