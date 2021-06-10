@@ -1,49 +1,54 @@
-import json, time
+import json
+import time
 
-clear = ""
+# https://www.videvo.net/
+
+clear = "/static/media/sunny.gif"
 sunny = "/static/media/sunny.gif"
 cloudy = "/static/media/cloudy.gif"
-overcast = ""
-mist = ""
-fog = ""
-freezing_fog = ""
+overcast = "/static/media/overcast.gif"
+mist = "/static/media/mist.gif"
+fog = "/static/media/fog.gif"
+freezing_fog = "/static/media/freezing_fog.gif"
 
 # Rain
-patchy_rain = ""
+patchy_rain = "/static/media/patchy_rain.gif"
 light_rain = "/static/media/light_shower.gif"
-patchy_thunder = ""
-moderate_rain = "/static/media/moderate.gif"
-heavy_rain = ""
-torrential_rain = ""
+patchy_thunder = "/static/media/patchy_thunder.gif"
+moderate_rain = "/static/media/moderate_rain.gif"
+heavy_rain = "/static/media/heavy_rain.gif"
+torrential_rain = "/static/media/torrential_rain.gif"
 storm = "/static/media/storm.gif"
-thunder_outbreak = ""
+thunder_outbreak = "/static/media/thunder_outbreak.gif"
 
 # Rain part 2
-patchy_drizzle = ""
-drizzle = ""
-freezing_drizzle = ""
-heavy_drizzle = ""
-light_freezing_rain = ""
-moderate_freezing = ""
+patchy_drizzle = "/static/media/drizzle.gif"
+drizzle = "/static/media/drizzle.gif"
+freezing_drizzle = "/static/media/drizzle.gif"
+heavy_drizzle = "/static/media/heavy_drizzle.gif"
+light_freezing_rain = "/static/media/freezing_rain.gif"
+moderate_freezing = "/static/media/freezing_rain.gif"
 
 # Snow
-patchy_snow = ""
-light_snow = ""
-moderate_snow = ""
-heavy_snow = ""
-blowing_snow = ""
-blizzard = ""
-light_snow_with_thunder = ""
-heavy_snow_with_thunder = ""
+patchy_snow = "/static/media/light_snow.gif"
+light_snow = "/static/media/light_snow.gif"
+moderate_snow = "/static/media/moderate_snow.gif"
+heavy_snow = "/static/media/heavy_snow.gif"
+blowing_snow = "/static/media/heavy_snow.gif"
+blizzard = "/static/media/blizzard.gif"
+light_snow_with_thunder = "/static/media/light_snow.gif"
+heavy_snow_with_thunder = "/static/media/blizzard.gif"
 
 # Sleet
-patchy_sleet = ""
-light_sleet = ""
-moderate_sleet = ""
+# https://gifer.com/
+patchy_sleet = "/static/media/light_sleet.gif"
+light_sleet = "/static/media/light_sleet.gif"
+moderate_sleet = "/static/media/moderate_sleet.gif"
 
 # Hail
-hail = ""
-heavy_hail = ""
+# https://makeagif.com/i/BUhmG3
+hail = "/static/media/hail.gif"
+heavy_hail = "/static/media/hail.gif"
 
 
 def check_icons():
@@ -66,7 +71,7 @@ def check_icons():
             return freezing_fog
 
         # Rain
-        elif _data_icons in ["Patchy rain possible"]:
+        elif _data_icons in ['Patchy rain possible']:
             return patchy_rain
         elif _data_icons in ['Light rain shower', 'Light rain', 'Patchy light rain']:
             return light_rain
@@ -146,3 +151,48 @@ def check_day_night():
         return day
     else:
         return night
+
+
+def white_black():
+    white_color = "white"
+    black_color = "black"
+    with open('weather.txt', 'r') as checkicons:
+        _data = json.loads(checkicons.read())
+        _data_icons = _data['current']['condition']['text']
+
+        if _data_icons in ['Freezing Fog', 'Sunny', 'Blizzard']:
+            return black_color
+        else:
+            return white_color
+
+
+def comment():
+    videvo = "Image By https://www.videvo.net/"
+    gifter = "Image By https://gifer.com/"
+    make_gif = "Image By https://makeagif.com/"
+
+    with open('weather.txt', 'r') as checkicons:
+        _data = json.loads(checkicons.read())
+        _data_icons = _data['current']['condition']['text']
+
+        if _data_icons in ['Clear', 'Sunny', 'Partly cloudy', 'Cloudy', 'Overcast', 'Mist', 'Fog', 'Freezing Fog',
+                           'Patchy rain possible', 'Light rain shower', 'Light rain', 'Patchy light rain',
+                           'Patchy light rain with thunder', 'Moderate rain at times', 'Moderate or heavy rain shower',
+                           'Moderate rain', 'Heavy rain at times', 'Heavy rain', 'Torrential rain shower',
+                           'Moderate or heavy rain with thunder', 'Thundery outbreaks possible',
+                           'Patchy freezing drizzle possible', 'Patchy light drizzle', 'Light drizzle',
+                           'Freezing drizzle']:
+            videvo_final = videvo.replace('"', '', 2)
+
+            return videvo_final
+
+        elif _data_icons in ['Light freezing rain', 'Moderate or heavy freezing rain']:
+            gifter_final = gifter.replace('"', '', 2)
+            return gifter_final
+        elif _data_icons in ['Ice pellets', 'Light sleet showers', 'Light showers of ice pellets',
+                             'Moderate or heavy sleet showers', 'Moderate or heavy showers of ice pellets']:
+            make_gif_final = gifter.replace('"', '', 2)
+            return make_gif_final
+        else:
+            videvo_final = videvo.replace('"', '', 2)
+            return videvo_final
