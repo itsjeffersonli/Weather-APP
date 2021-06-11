@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from models.models import *
 from models.detector import *
 from api.weather_api import *
@@ -7,9 +7,14 @@ from api.ip_api import *
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route("/", methods=["GET"])
+def get_my_ip():
+      return jsonify({'ip': request.remote_addr}), 200
+
+
+@app.route('/app', methods=['GET', 'POST'])
 def main():
-    ip = request.remote_addr
+    ip = request.headers['X-Real-IP']
     location = ip_weather_locate(ip)
     get_weather(location)
 
@@ -32,7 +37,7 @@ def find():
                                data=check_icons(), percent_condition=get_condition_percent(), color=white_black(),
                                comment=comment())
     else:
-        return '''<h1>PLEASE DONT USE GET REQUEST</h1>'''
+        return render_template('main.html')
 
 
 if __name__ == '__main__':
