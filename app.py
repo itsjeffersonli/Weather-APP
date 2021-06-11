@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    ip = request.remote_addr
     location = ip_weather_locate(ip)
     get_weather(location)
 
