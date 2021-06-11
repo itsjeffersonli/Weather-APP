@@ -7,17 +7,10 @@ from api.ip_api import *
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"])
-def get_my_ip():
-      return jsonify({'ip': request.remote_addr}), 200
-
-
-@app.route('/app', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def main():
-    ip = request.headers['X-Real-IP']
-    location = ip_weather_locate(ip)
+    location = ip_weather_locate()
     get_weather(location)
-
     return render_template('main.html', icon=get_icon(), condition=get_condition(),
                            temperature=get_temperature(), wind_dir=get_wind_direction(),
                            rain=get_rain(), humidity=get_humidity(), city=get_city(), date=get_date(),
