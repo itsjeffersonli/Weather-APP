@@ -7,15 +7,9 @@ from api.ip_api import *
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['POST', 'GET'])
 def main():
-    location = ip_weather_locate()
-    get_weather(location)
-    return render_template('main.html', icon=get_icon(), condition=get_condition(),
-                           temperature=get_temperature(), wind_dir=get_wind_direction(),
-                           rain=get_rain(), humidity=get_humidity(), city=get_city(), date=get_date(),
-                           data=check_icons(), percent_condition=get_condition_percent(), color=white_black(),
-                           comment=comment())
+    return render_template('main.html')
 
 
 @app.route('/find', methods=['GET', 'POST'])

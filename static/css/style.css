@@ -2,8 +2,8 @@ body,
 html {
     overflow-x: hidden;
     height: 100%;
-    background-image: linear-gradient(#81d4fa, #2196f3);
-    background-repeat: no-repeat;
+    background: #264653;
+    background-size: cover;
 }
 
 .card0 {
@@ -20,12 +20,12 @@ html {
 }
 
 .card2 {
-    background-color: #607d8b;
+    background-color: #2a9d8f;
     padding: 0px 0px 40px 40px;
 }
 
 input {
-    background-color: #607d8b;
+    background-color: #2a9d8f;
     padding: 24px 0px 12px 0px !important;
     width: 80%;
     box-sizing: border-box;
@@ -58,21 +58,17 @@ input:focus {
 }
 
 .fa-search {
-    color: #607d8b;
-    background-color: #e1f5fe;
+    color: #e9c46a;
+    background-color: #e76f51;
     font-size: 20px;
     padding: 20px;
     width: 20%;
     cursor: pointer;
+    border-radius: 50%;
 }
 
 .light-text {
-    color: #b0bec5;
-}
-
-.suggestion:hover {
-    color: #fff;
-    cursor: pointer;
+    color: #e9c46a;
 }
 
 .line {
