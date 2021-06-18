@@ -1,5 +1,7 @@
 import json
 import time
+from datetime import datetime
+from pytz import timezone
 
 # Normal Weather
 clear = "/static/media/sunny.gif"
@@ -134,17 +136,21 @@ def check_icons():
         else:
             return "https://i.imgur.com/M8VyA2h.png"
 
+
 def white_black():
-    white_color = "white"
-    black_color = "black"
+    white = "#FFFFFF"
+    grey_color = "#696969"
+    dirty_white = "#C0C0C0"
     with open('weather.txt', 'r') as checkicons:
         _data = json.loads(checkicons.read())
         _data_icons = _data['current']['condition']['text']
 
         if _data_icons in ['Freezing Fog', 'Blizzard']:
-            return black_color
+            return grey_color
+        elif _data_icons in ['Moderate or heavy rain shower', 'Moderate rain']:
+            return dirty_white
         else:
-            return white_color
+            return white
 
 
 def comment():
@@ -172,9 +178,33 @@ def comment():
             return gifter_final
         elif _data_icons in ['Ice pellets', 'Light sleet showers', 'Light showers of ice pellets',
                              'Moderate or heavy sleet showers', 'Moderate or heavy showers of ice pellets']:
-            make_gif_final = gifter.replace('"', '', 2)
+            make_gif_final = make_gif.replace('"', '', 2)
             return make_gif_final
         else:
             videvo_final = videvo.replace('"', '', 2)
             return videvo_final
 
+
+# noinspection PyChainedComparisons
+def say_time():
+
+    with open('weather.txt', 'r') as time_zone:
+        _data = json.loads(time_zone.read())
+        _data = _data['location']['tz_id']
+        _format = "%H"
+        now = datetime.now(timezone('UTC'))
+        _get_utc_time = now.strftime(_format)
+        now_timezone = now.astimezone(timezone(_data))
+        final_time = now_timezone.strftime(_format)
+
+        _time = int(final_time)
+        if _time > 21 and _time < 6:
+            return "Good Night"
+        elif _time > 6 and _time < 12:
+            return "Good Morning"
+        elif _time > 12 and _time < 17:
+            return "Good Afternoon"
+        elif _time > 17 and _time < 21:
+            return "Good Evening"
+        else:
+            return "Noon"

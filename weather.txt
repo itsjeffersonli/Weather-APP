@@ -1,0 +1,37 @@
+{
+    "current": {
+        "cloud": 100,
+        "condition": {
+            "code": 1009,
+            "icon": "//cdn.weatherapi.com/weather/64x64/night/122.png",
+            "text": "Overcast"
+        },
+        "feelslike_c": 6.6,
+        "feelslike_f": 43.8,
+        "gust_kph": 28.8,
+        "gust_mph": 17.9,
+        "humidity": 76,
+        "precip_in": 0.02,
+        "precip_mm": 0.5,
+        "pressure_in": 30.4,
+        "pressure_mb": 1012.0,
+        "temp_c": 9.0,
+        "uv": 1.0,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "wind_degree": 180,
+        "wind_dir": "S",
+        "wind_kph": 9.0,
+        "wind_mph": 5.6
+    },
+    "location": {
+        "country": "Australia",
+        "lat": -35.28,
+        "localtime": "2021-06-19 1:21",
+        "localtime_epoch": 1624029687,
+        "lon": 149.22,
+        "name": "Canberra",
+        "region": "Australian Capital Territory",
+        "tz_id": "Australia/Sydney"
+    }
+}
