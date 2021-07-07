@@ -114,6 +114,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-models/weather.txt
-weather.txt
-weather.txt
