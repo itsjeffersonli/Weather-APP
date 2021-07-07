@@ -8,6 +8,7 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+        <script src="https://kit.fontawesome.com/cf6edd8625.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript"></script>
@@ -46,19 +47,19 @@
                             <div class="line my-5"></div>
                             <p>Weather Details</p>
                             <div class="row px-3">
-                                <p class="light-text">Clouds</p>
+                                <p class="light-text"><i class="fas fa-cloud"> </i> Clouds</p>
                                 <p class="ml-auto">{{ percent_condition }}%</p>
                             </div>
                             <div class="row px-3">
-                                <p class="light-text">Humidity</p>
+                                <p class="light-text"><i class="fas fa-tint"> </i> Humidity</p>
                                 <p class="ml-auto">{{ humidity }}%</p>
                             </div>
                             <div class="row px-3">
-                                <p class="light-text">Wind Direction</p>
+                                <p class="light-text"><i class="fas fa-wind"> </i> Wind Direction</p>
                                 <p class="ml-auto">{{ wind_dir }}</p>
                             </div>
                             <div class="row px-3">
-                                <p class="light-text">Rain</p>
+                                <p class="light-text"><i class="fas fa-cloud-rain"> </i> Rain</p>
                                 <p class="ml-auto">{{ rain }}</p>
                             </div>
                             <div class="line mt-3"></div>

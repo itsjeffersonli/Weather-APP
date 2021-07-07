@@ -1,37 +1,37 @@
 {
     "current": {
-        "cloud": 100,
+        "cloud": 25,
         "condition": {
-            "code": 1009,
-            "icon": "//cdn.weatherapi.com/weather/64x64/night/122.png",
-            "text": "Overcast"
+            "code": 1003,
+            "icon": "//cdn.weatherapi.com/weather/64x64/night/116.png",
+            "text": "Partly cloudy"
         },
-        "feelslike_c": 6.6,
-        "feelslike_f": 43.8,
-        "gust_kph": 28.8,
-        "gust_mph": 17.9,
-        "humidity": 76,
-        "precip_in": 0.02,
-        "precip_mm": 0.5,
+        "feelslike_c": 31.8,
+        "feelslike_f": 89.2,
+        "gust_kph": 12.2,
+        "gust_mph": 7.6,
+        "humidity": 66,
+        "precip_in": 0.0,
+        "precip_mm": 0.0,
         "pressure_in": 30.4,
         "pressure_mb": 1012.0,
-        "temp_c": 9.0,
-        "uv": 1.0,
+        "temp_c": 30.0,
+        "uv": 7.0,
         "vis_km": 10.0,
         "vis_miles": 6.0,
-        "wind_degree": 180,
-        "wind_dir": "S",
-        "wind_kph": 9.0,
-        "wind_mph": 5.6
+        "wind_degree": 0,
+        "wind_dir": "N",
+        "wind_kph": 0.0,
+        "wind_mph": 0.0
     },
     "location": {
-        "country": "Australia",
-        "lat": -35.28,
-        "localtime": "2021-06-19 1:21",
-        "localtime_epoch": 1624029687,
-        "lon": 149.22,
-        "name": "Canberra",
-        "region": "Australian Capital Territory",
-        "tz_id": "Australia/Sydney"
+        "country": "Central African Republic",
+        "lat": 4.37,
+        "localtime": "2021-07-07 18:32",
+        "localtime_epoch": 1625679136,
+        "lon": 18.58,
+        "name": "Bangui",
+        "region": "Bangui",
+        "tz_id": "Africa/Bangui"
     }
 }

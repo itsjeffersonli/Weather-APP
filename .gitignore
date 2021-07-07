@@ -116,3 +116,4 @@ dmypy.json
 .pyre/
 models/weather.txt
 weather.txt
+weather.txt
