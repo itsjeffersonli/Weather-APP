@@ -18,13 +18,21 @@ def main():
                            comment=comment(), say_time=say_time())
 
 
-@app.route('/find', methods=['GET', 'POST'])
+@app.route('/find', methods=['POST', 'GET'])
 def find():
     if request.method == "POST":
         location = request.form["location"]
+        location = location.replace("[^A-Za-z]","");
+
 
         if location == "":
-            return render_template("")
+            country = random_country()
+            get_weather(country)
+            return render_template('main.html', icon=get_icon(), condition=get_condition(),
+                        temperature=get_temperature(), wind_dir=get_wind_direction(),
+                        rain=get_rain(), humidity=get_humidity(), city=get_city(), date=get_date(),
+                        data=check_icons(), percent_condition=get_condition_percent(), color=white_black(),
+                        comment=comment(), say_time=say_time())
         else:
             get_weather(location)
 
