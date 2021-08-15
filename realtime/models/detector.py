@@ -1,5 +1,4 @@
 import json
-import time
 from datetime import datetime
 from pytz import timezone
 
@@ -208,3 +207,14 @@ def say_time():
             return "Good Evening"
         else:
             return "Noon"
+
+def date_converter(_timezone):
+    _timezone = str(_timezone)
+    _format = "%H:%M - %m/%d/%Y"
+    now = datetime.now(timezone('UTC'))
+    _get_utc_time = now.strftime(_format)
+
+    now_timezone = now.astimezone(timezone(_timezone))
+    final_date = now_timezone.strftime(_format)
+
+    return final_date

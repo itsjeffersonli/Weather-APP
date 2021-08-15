@@ -1,6 +1,37 @@
 {
-    "error": {
-        "code": 1006,
-        "message": "No matching location found."
+    "current": {
+        "cloud": 0,
+        "condition": {
+            "code": 1000,
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "text": "Sunny"
+        },
+        "feelslike_c": 24.5,
+        "feelslike_f": 76.0,
+        "gust_kph": 13.3,
+        "gust_mph": 8.3,
+        "humidity": 65,
+        "precip_in": 0.02,
+        "precip_mm": 0.6,
+        "pressure_in": 29.74,
+        "pressure_mb": 1007.0,
+        "temp_c": 22.0,
+        "uv": 6.0,
+        "vis_km": 10.0,
+        "vis_miles": 6.0,
+        "wind_degree": 20,
+        "wind_dir": "NNE",
+        "wind_kph": 6.8,
+        "wind_mph": 4.3
+    },
+    "location": {
+        "country": "Croatia",
+        "lat": 45.8,
+        "localtime": "2021-08-05 18:00",
+        "localtime_epoch": 1628179221,
+        "lon": 16.0,
+        "name": "Zagreb",
+        "region": "Grad Zagreb",
+        "tz_id": "Europe/Zagreb"
     }
 }
